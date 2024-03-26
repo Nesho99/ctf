@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Naslovna</title>
+</head>
+
+<body>
+    <div class="header-background">
+        <nav class="top-menu">
+            <a href="#home" class="menu-item">Home</a>
+            <a href="#services" class="menu-item">Services</a>
+            <a href="#about" class="menu-item">About Us</a>
+            <a href="#testimonials" class="menu-item">Contact</a>
+            <a href="#contact" class="menu-item">Blog</a>
+            <a href="#contact" class="menu-item">FAQs</a>
+        </nav>
+    </div>
+<div class="main-bg">
+    <div class="services-section">
+
+        <div class="service">
+          <img class="service-icon" src="img/comunication.svg" alt="Communication Icon">
+          <h3 class="service-title">COMMUNICATION</h3>
+          <p class="service-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.</p>
+        </div>
+
+        <div class="service">
+          <img class="service-icon" src="img/analysis.svg" alt="Analysis Icon">
+          <h3 class="service-title">ANALYSIS</h3>
+          <p class="service-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.</p>
+        </div>
+        <div class="service">
+          <img class="service-icon" src="img/solutions.svg" alt="Solutions Icon">
+          <h3 class="service-title">SOLUTIONS</h3>
+          <p class="service-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.</p>
+        </div>
+        <div class="service" style="border: none;">
+          <img class="service-icon" src="img/growh.svg" alt="Growth Icon">
+          <h3 class="service-title">GROWTH</h3>
+          <p class="service-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.</p>
+        </div>
+        
+      </div>
+  </div>
+
+  <div class="problem-container">
+    <div class="left-panel">
+      <h1>If you're facing these problems:</h1>
+      <ul>
+        <li>lorem ipsum</li>
+        <li>lorem ipsum</li>
+        <li>lorem ipsum</li>
+        <li>lorem ipsum</li>
+      </ul>
+    </div>
+    <img class="magnfier-img" src="/img/magnifier.svg" alt="">
+    
+  </div>
+  <div class="solution-container">
+    <img class="magnfier-img" src="/img/graph.svg" alt="">
+    <div class="right-panel">
+      <h1>We have a solution</h1>
+      <ul>
+        <li>lorem ipsum</li>
+        <li>lorem ipsum</li>
+        <li>lorem ipsum</li>
+        <li>lorem ipsum</li>
+      </ul>
+    </div>
+    
+    
+  </div>
+
+  
+     
+
+</body>
+
+</html>
+
+<style>
+ .header-background {
+  background-image: url('/img/head_index.svg');
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+  background-position: top center;
+  width: 100vw;
+  height: auto;
+  min-height: 60vh;
+}
+
+body{
+ /* You might want to define specific colors for the gradient */
+ background: linear-gradient(to bottom, #005BAA, #022544);
+
+/* Ensure the gradient covers the entire background */
+background-size: cover;
+
+/* Make sure the gradient doesn't repeat */
+background-repeat: no-repeat;
+
+/* Optional: Makes the background fixed, so content scrolls over it */
+background-attachment: fixed;
+
+/* Ensure the background extends to the whole page */
+min-height: 100vh;
+margin: 0;
+}
+
+.services-section {
+  display: flex;
+  justify-content: space-evenly;
+  background-color: #FFFF; /* Light gray background */
+  padding: 20px;
+  margin: auto 20%; /* This may cause layout issues depending on your design */
+  transform: translateY(-50%);
+  box-shadow: 5px
+
+}
+
+.service {
+  display: flex;
+  flex-direction: column;
+  border-right:2px solid #005BAA ;
+
+}
+
+.service-icon {
+margin: 0 50px;
+margin-bottom: 10px;
+height: 60px;
+  /* Ensure that text-align is not conflicting here */
+}
+
+
+.service-title {
+  color: #00539CFF; /* Blue color for the text */
+  font-size: 18px; /* Size of the service title */
+  margin-bottom: 5px; /* Space below the title */
+  text-align: center;
+}
+
+.service-description {
+  color: #005BAA; /* Gray color for the description text */
+  font-size: 14px; /* Size of the service description */
+  margin: auto;
+  padding: 0 10px; /* Padding on the sides of the description text */
+  text-align: center;
+}
+.problem-container{
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  font-size: xx-large
+}
+
+.solution-container{
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  font-size: xx-large
+}
+  
+  </style> 
