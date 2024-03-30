@@ -108,8 +108,18 @@
         <h3 class="service-pricing-title">100€</h3>
 
 
+
       </div>
     </div>
+  </div>
+
+  <h3 class="testemonial-title"> Testemonials</h3>
+  <div class="testemonial-content">
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+      magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+      consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+      Excepteur sint occaecat cupidatat non proident</p>
+      <h3 style="margin-top: 20px;">- Jane Doe -</h3>
   </div>
 
 
@@ -129,19 +139,12 @@
   }
 
   body {
-    /* You might want to define specific colors for the gradient */
     background: linear-gradient(to bottom, #005BAA, #022544);
 
-    /* Ensure the gradient covers the entire background */
+
     background-size: cover;
-
-    /* Make sure the gradient doesn't repeat */
     background-repeat: no-repeat;
-
-    /* Optional: Makes the background fixed, so content scrolls over it */
     background-attachment: fixed;
-
-    /* Ensure the background extends to the whole page */
     min-height: 100vh;
     margin: 0;
   }
@@ -150,10 +153,8 @@
     display: flex;
     justify-content: space-evenly;
     background-color: #FFFF;
-    /* Light gray background */
     padding: 20px;
     margin: auto 20%;
-    /* This may cause layout issues depending on your design */
     transform: translateY(-50%);
     box-shadow: 5px
   }
@@ -167,28 +168,21 @@
 
   .service-icon {
     height: 60px;
-    /* Ensure that text-align is not conflicting here */
   }
 
 
   .service-title {
     color: #00539CFF;
-    /* Blue color for the text */
     font-size: 18px;
-    /* Size of the service title */
     margin-bottom: 5px;
-    /* Space below the title */
     text-align: center;
   }
 
   .service-description {
     color: #005BAA;
-    /* Gray color for the description text */
     font-size: 14px;
-    /* Size of the service description */
     margin: auto;
     padding: 0 10px;
-    /* Padding on the sides of the description text */
     text-align: center;
   }
 
@@ -237,29 +231,39 @@
     margin-top: 20px;
     margin-bottom: 10px;
     height: 120px;
-    /* Ensure that text-align is not conflicting here */
   }
 
 
   .service-pricing-title {
     color: #00539CFF;
-    /* Blue color for the text */
     font-size: 25x;
-    /* Size of the service title */
     margin-bottom: 20px;
-    /* Space below the title */
     text-align: center;
   }
 
   .service-pricing-description {
     color: #005BAA;
-    /* Gray color for the description text */
     font-size: 14px;
-    /* Size of the service description */
     margin: auto;
     padding: 0 10px;
-    /* Padding on the sides of the description text */
     text-align: center;
     margin-bottom: 30px;
+  }
+
+  .testemonial-title {
+    font-size: xxx-large;
+    color: white;
+    text-align: right;
+    margin-right: 5%;
+    margin-top: 20px;
+  }
+
+  .testemonial-content {
+    text-align: center;
+    margin: 20px 100px;
+    padding: 70px 40px;
+    font-size: 18px;
+    color: white;
+    border: white 1px solid;
   }
 </style>
