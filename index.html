@@ -119,10 +119,54 @@
       magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
       consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
       Excepteur sint occaecat cupidatat non proident</p>
-      <h3 style="margin-top: 20px;">- Jane Doe -</h3>
+    <h3 style="margin-top: 20px;">- Jane Doe -</h3>
   </div>
 
+  <div class="about-us-container">
 
+    <div class="left-panel">
+      <h1>About us</h1>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+        magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+        pariatur. Excepteur sint occaecat cupidatat non proident</p>
+
+    </div>
+    <img style="transform: translateX(-30%);" src="/img/logo-blue.svg" alt="">
+  </div>
+  <div class="about-us-container">
+    <img style="transform: translateX(15%);" src="/img/globe.svg" alt="">
+    <div class="left-panel">
+      <h1>Partners</h1>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+        magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+        pariatur. Excepteur sint occaecat cupidatat non proident</p>
+
+    </div>
+
+  </div>
+  <div class="contact">
+    <h1>Contact</h1>
+    <form class="forma" action="">
+      <div class="label">
+        <label style="margin-left: 10px;" for="name">Name:</label>
+        <label style="margin-left: 40%;" for="subject">Subject:</label>
+      </div>
+      <div class="prvi-red">    
+        <input name="name" type="text">
+        <input name="subject" type="text">
+      </div>
+      <div class="drugi-red">
+        <label style="margin-left: 10px;" for="message">Message:</label>
+        <textarea name="message" name="massage" id="message" cols="30" rows="10"></textarea>
+      </div>
+      <div class="treci-red">
+        <button>Send</button>
+      </div>
+    </form>
+
+  </div>
 </body>
 
 </html>
@@ -266,4 +310,84 @@
     color: white;
     border: white 1px solid;
   }
+
+  .about-us-container {
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    font-size: xx-large;
+    margin-bottom: 50px;
+  }
+
+  .partners-container {
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    font-size: xx-large;
+    margin-bottom: 50px;
+  }
+
+  .contact {
+    background-image: url(/img/contact.svg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    min-height: 60vh;
+  }
+
+  .forma {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+
+
+
+  }
+  label{
+    color: white;
+  }
+
+  input[type="text"],
+  textarea {
+    background: none;
+    border: 1px solid white;
+    margin-bottom: 20px;
+    margin-top: 20px;
+
+  }
+  textarea{
+
+    width: 95%;
+    margin-left: 10px;
+  }
+  input[type="text"]{
+
+    width: 45%;
+    height: 40px;
+    margin-left: 10px;
+    margin-right: 10px;
+
+  }
+  .contact >h1{
+    color: white;
+    font-size: xxx-large;
+    margin-left: 5px;
+
+  }
+  .treci-red{
+    display: flex;
+    justify-content: center;
+  }
+  .treci-red>button{
+    width: 30%;
+    background-color: white;
+    color:#001158;
+    padding: 10px;
+    font-size: x-large;
+    font-weight: 500;
+    border-bottom-right-radius: 30%;
+  }
+
+
+
 </style>
