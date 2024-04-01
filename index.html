@@ -5,7 +5,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
-  <title>Naslovna</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<title>Naslovna</title>
 </head>
 
 <body>
@@ -153,7 +155,7 @@
         <label style="margin-left: 10px;" for="name">Name:</label>
         <label style="margin-left: 40%;" for="subject">Subject:</label>
       </div>
-      <div class="prvi-red">    
+      <div class="prvi-red">
         <input name="name" type="text">
         <input name="subject" type="text">
       </div>
@@ -167,6 +169,41 @@
     </form>
 
   </div>
+  <footer class="footer">
+    <div class="footer-section">
+      <img src="img/logo-white-name.svg" alt="">
+      <p>We help small, medium, and large entrepreneurs</p>
+      <p>We will become the leading consulting firm in Europe.</p>
+      <p>Tkalčićeva 5, Zagreb</p>
+      <div class="icons"> <i class="fa fa-facebook-official"></i>
+        <i class="fa fa-instagram"></i>
+        <i class="fa fa-linkedin-square"></i>
+      </div>
+
+
+    </div>
+    <div class="footer-section">
+      <h3>Services</h3>
+      <a>Analysis</a>
+      <a>Analysis + plan</a>
+      <a>Premium guiding</a>
+    </div>
+    <div class="footer-section">
+      <h3>Fast menu</h3>
+      <a>Home</a>
+      <a>Services</a>
+      <a>About Us</a>
+      <a>Contact</a>
+      <a>Blog</a>
+      <a>FAQ's</a>
+    </div>
+    <div class="footer-section">
+      <h3>Contact:</h3>
+      <p>info@easterncnc.com</p>
+      <p>044 564 444</p>
+    </div>
+  </footer>
+
 </body>
 
 </html>
@@ -184,7 +221,6 @@
 
   body {
     background: linear-gradient(to bottom, #005BAA, #022544);
-
 
     background-size: cover;
     background-repeat: no-repeat;
@@ -343,7 +379,8 @@
 
 
   }
-  label{
+
+  label {
     color: white;
   }
 
@@ -355,12 +392,14 @@
     margin-top: 20px;
 
   }
-  textarea{
+
+  textarea {
 
     width: 95%;
     margin-left: 10px;
   }
-  input[type="text"]{
+
+  input[type="text"] {
 
     width: 45%;
     height: 40px;
@@ -368,26 +407,29 @@
     margin-right: 10px;
 
   }
-  .contact >h1{
+
+  .contact>h1 {
     color: white;
     font-size: xxx-large;
     margin-left: 5px;
 
   }
-  .treci-red{
+
+  .treci-red {
     display: flex;
     justify-content: center;
   }
-  .treci-red>button{
+
+  .treci-red>button {
     width: 30%;
     background-color: white;
-    color:#001158;
+    color: #001158;
     padding: 10px;
     font-size: x-large;
     font-weight: 500;
     border-bottom-right-radius: 30%;
   }
-
-
-
+  .icons{
+    display: inline;
+  }
 </style>
