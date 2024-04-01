@@ -7,12 +7,11 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
-<title>Analysis</title>
+<title>Blog</title>
 </head>
 
 <body>
     <div class="header-background">
-
         <nav class="top-menu">
             <div class="top-menu-icon">
                 <img src="/img/logo-blue-name.svg" alt="">
@@ -26,32 +25,55 @@
 
         </nav>
         <div class="header-title">
-            <h1>Analysis</h1>
+            <h1>Blog</h1>
         </div>
+    </div>
+    <div class="main">
+        <div class="service-pricing-container">
+
+            <div class="service-pricing-boxes">
+                <div class="service-pricing">
+                    <img class="service-pricing-icon" src="img/blog1.svg" alt="Solutions Icon">
+                    <h3 class="service-pricing-title">Title</h3>
+                    <p class="service-pricing-description"> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                        do eiusmod
+                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                        exercitation ullamco
+                        laboris nisi ut aliquip ex ea commodo consequat </p>
+
+                </div>
+
+                <div class="service-pricing">
+                    <img class="service-pricing-icon" src="img/blog2.svg" alt="Solutions Icon">
+                    <h3 class="service-pricing-title">Title</h3>
+                    <p class="service-pricing-description"> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                        do eiusmod
+                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                        exercitation ullamco
+                        laboris nisi ut aliquip ex ea commodo consequat. </p>
+
+                </div>
+                <div class="service-pricing">
+                    <img class="service-pricing-icon" src="img/blog3.svg" alt="Solutions Icon">
+                    <h3 class="service-pricing-title">Title</h3>
+                    <p class="service-pricing-description"> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                        do eiusmod
+                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                        exercitation ullamco
+                        laboris nisi ut aliquip ex ea commodo consequat. </p>
+
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="btn-conntainer">
+        <button>View more</button>
 
     </div>
-    <div class="service-description">
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-            dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-            ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-            fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident</p>
-    </div>
-    <div class="service-main">
-        <div class="left-panel">
-            <h1> You wil get:</h1>
-            <ul>
-                <li>lorem ipsum</li>
-                <li>lorem ipsum</li>
-                <li>lorem ipsum</li>
-                <li>lorem ipsum</li>
-            </ul>
-            <h1>For only 100€</h1>
-            <button>Buy now</button>
-        </div>
-        <div class="right-panel">
-            <img src="/img/doc.svg" alt="">
-        </div>
-    </div>
+
     <footer class="footer">
         <div class="footer-section">
             <img src="img/logo-white-name.svg" alt="">
@@ -90,7 +112,7 @@
 
 <style>
     .header-background {
-        background-image: linear-gradient(to bottom, rgba(0, 91, 170, 0.5), rgba(2, 37, 68, 0.5)), url('/img/head-analysis.svg');
+        background-image: linear-gradient(to bottom, rgba(0, 91, 170, 0.5), rgba(2, 37, 68, 0.5)), url('/img/head_index.svg');
         background-size: 100% auto;
         background-repeat: no-repeat;
         background-position: top center;
@@ -119,36 +141,55 @@
         margin: 0;
     }
 
-    .service-description {
+    .service-pricing-container {
         color: white;
-        text-align: center;
-        transform: translateY(-60%);
+        font-size: xx-large;
+        margin-top: 30px;
+        margin-left: 130px;
+        margin-right: 130px;
     }
 
-    .service-main {
+    .service-pricing-boxes {
+        padding: 20px;
+        box-shadow: 5px;
         display: flex;
-        justify-content: space-between;
-        color: white;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
+    .service-pricing {
+        background-color: white;
+        display: flex;
+        flex-direction: column;
+        max-width: 30%;
+
+    }
+
+    .service-pricing-icon {
+        height: 100%;
+        width: 100%;
+    }
+
+
+    .service-pricing-title {
+        color: #00539CFF;
+        font-size: 25x;
+        margin-bottom: 20px;
+        text-align: center;
+    }
+
+    .service-pricing-description {
+        color: #005BAA;
+        font-size: 14px;
+        margin: auto;
+        padding: 0 10px;
+        text-align: center;
         margin-bottom: 30px;
     }
 
-    .right-panel {
-        height: 60vh;
-        margin-right: 20px;
-    }
-
-    .left-panel {
+    .btn-conntainer {
         display: flex;
-        flex-direction: column;
-        margin-left: 20px;
-    }
-
-    .left-panel>ul {
-        margin-bottom: 50px;
-    }
-
-    .right-panel>img {
-        height: 60vh;
+        justify-content: center;
     }
 
     button {
@@ -158,5 +199,6 @@
         font-size: x-large;
         font-weight: 500;
         border-bottom-right-radius: 30%;
+        margin-bottom: 50px;
     }
 </style>
