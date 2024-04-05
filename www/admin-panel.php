@@ -1,4 +1,11 @@
 <?php
+require_once ("Sesija.class.php");
+
+if (Sesija::dajKorisnika() == null) {
+    echo "Session create fail";
+    header("Location: ./admin-login.html");
+}
+
 $dbPath = 'sqlite:./ctf.db';
 
 try {
@@ -65,6 +72,44 @@ try {
 $db = null;
 ?>
         </div>
+    </div>
+
+    <div class="forma">
+        <form action="admin-panel.php" , method="post">
+            <label for="username">IP:</label>
+            <input type="text" name="ip" value="127.0.0.1">
+            <button type="submit">Send</button>
+        </form>
+
+
+    </div>
+
+    <div class="output">
+        <h1>
+            <?php
+            if (isset($_POST["ip"])) {
+                $command = 'ping -c 1 ' . $_POST["ip"] . ' > /dev/null 2>&1';
+
+
+                echo "<pre>"; 
+                system($command, $return_var);
+                echo "</pre>";
+
+
+                if ($return_var === 0) {
+                    echo "Health Check Successful: System is online and can connect to the internet.";
+                } else {
+                    echo "Health Check Failed: System might be offline or unable to connect to the internet.";
+                }
+            }
+            ?>
+        </h1>
+    </div>
+
+
+
+
+
     </div>
 
 
@@ -137,11 +182,51 @@ $db = null;
         border: 2px solid white;
     }
 
-    .contact-table td, .contact-table th {
-    border: 1px solid white;
-    text-align: center;
-    padding: 8px;
-    color: white;
-}
+    .contact-table td,
+    .contact-table th {
+        border: 1px solid white;
+        text-align: center;
+        padding: 8px;
+        color: white;
+    }
 
+    .forma {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+
+    }
+
+    label {
+        color: white;
+    }
+
+    input[type="text"],
+    input[type="password"],
+    textarea {
+        background: none;
+        border: 1px solid white;
+        margin-bottom: 20px;
+        margin-top: 20px;
+        font-size: x-large;
+        color: white;
+    }
+
+
+    button {
+        width: 30%;
+        margin-left: 30%;
+        background-color: white;
+        color: #001158;
+        padding: 10px;
+        font-size: x-large;
+        font-weight: 500;
+        border-bottom-right-radius: 30%;
+    }
+
+    .output {
+        color: white;
+        text-align: center;
+    }
 </style>
