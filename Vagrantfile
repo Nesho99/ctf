@@ -84,12 +84,17 @@ Vagrant.configure("2") do |config|
     sudo apt-get update
     sudo apt-get install php8.2  libapache2-mod-php8.2 -y
     sudo apt install sqlite3 -y
+    sudo apt install php8.2-sqlite3 -y
     sudo sqlite3 /var/www/html/ctf.db "CREATE TABLE contact(name text, subject text, message text);"
     sudo sqlite3 /var/www/html/ctf.db "CREATE TABLE user(username text, password text);"
-    sudo sqlite3 /var/www/html/ctf.db "INSERT INTO user VALUES ('admin','\$2a\$12$\vwst9dNGCgUWO46DMH7Zqu1zrstgYXIkzBqMgaAEcJYVeyCgdMfLG');"
+    PLAINTEXT_PASSWORD="MrR0b0t15Th3B3st"
+    HASHED_PASSWORD=$(php -r "echo password_hash('$PLAINTEXT_PASSWORD', PASSWORD_BCRYPT);")
+    sudo sqlite3 /var/www/html/ctf.db "INSERT INTO user VALUES ('admin','$HASHED_PASSWORD');"
     sudo service apache2 start
     sudo ufw allow 80 
     yes | sudo ufw enable
+    sudo service apache2 restart
+    
 
 
   SHELL
