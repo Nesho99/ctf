@@ -106,9 +106,11 @@ Vagrant.configure("2") do |config|
     snap install chromium
     sudo -H pip3 install -r /home/automated-user/requirements.txt
     sudo sh -c '(crontab -u root -l; echo "*/5 * * * * /usr/bin/python3 /home/automated-user/main.py") | crontab -u root -'
+    echo 'www-data ALL=(ALL) NOPASSWD: /usr/bin/awk' > /tmp/www-data-awk
+    visudo -c -f /tmp/www-data-awk && mv /tmp/www-data-awk /etc/sudoers.d/
+    
   SHELL
 end
-
 
 
 
