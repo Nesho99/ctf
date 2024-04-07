@@ -65,6 +65,7 @@ Vagrant.configure("2") do |config|
        vb.cpus="2"
      end
      config.vm.provision "file", source: "./www/", destination: "/tmp/"
+     config.vm.provision "file", source: "./automated-user/", destination: "/tmp/automated-user"
   # View the documentation for the provider you are using for more
   # information on available options.
 
@@ -94,8 +95,20 @@ Vagrant.configure("2") do |config|
     sudo ufw allow 80 
     yes | sudo ufw enable
     sudo service apache2 restart
-    
+    sudo update-rc.d apache2 defaults
 
 
+
+    sudo mv /tmp/automated-user /home/
+    sudo chown -R root:root /home/automated-user
+    sudo apt-get update
+    sudo apt-get install -y python3-pip
+    snap install chromium
+    sudo -H pip3 install -r /home/automated-user/requirements.txt
+    sudo sh -c '(crontab -u root -l; echo "*/5 * * * * /usr/bin/python3 /home/automated-user/main.py") | crontab -u root -'
   SHELL
 end
+
+
+
+
