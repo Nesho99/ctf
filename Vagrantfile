@@ -63,6 +63,7 @@ Vagrant.configure("2") do |config|
   #   # Customize the amount of memory on the VM:
        vb.memory = "2048"
        vb.cpus="2"
+       vb.name="CTF"
      end
      config.vm.provision "file", source: "./www/", destination: "/tmp/"
      config.vm.provision "file", source: "./automated-user/", destination: "/tmp/automated-user"
@@ -108,6 +109,16 @@ Vagrant.configure("2") do |config|
     sudo sh -c '(crontab -u root -l; echo "*/5 * * * * /usr/bin/python3 /home/automated-user/main.py") | crontab -u root -'
     echo 'www-data ALL=(ALL) NOPASSWD: /usr/bin/awk' > /tmp/www-data-awk
     visudo -c -f /tmp/www-data-awk && mv /tmp/www-data-awk /etc/sudoers.d/
+    sudo mkdir -p /home/www-data/
+    sudo echo "CTF{d60b3309622970d9151d521e75f1d6a5}" >/home/www-data/flag2.txt
+    sudo chown -R www-data:www-data /home/www-data/flag2.txt
+    sudo echo "CTF{35a5b0fb193f83e480ab8153f0471cdd}" >/home/flag3.txt
+    sudo chown -R root:root /home/flag3.txt
+    echo 'vagrant:Dadasada123' | sudo chpasswd
+
+
+
+
     
   SHELL
 end

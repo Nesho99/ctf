@@ -43,7 +43,8 @@ try {
 
             </nav>
             <div class="header-title">
-                <h1> Admin panel</h1>
+                <h1> Admin panel</h1> <br>
+                <p>flag: CTF{40515a153110e92ea5efa9641dd3c204}</p>
             </div>
         </div>
 
