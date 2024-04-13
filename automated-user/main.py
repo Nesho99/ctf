@@ -13,8 +13,8 @@ async def main():
 
     await page.goto('http://localhost/admin-login.html')
 
-    await page.type('input[name="username"]', 'admin')
-    await page.type('input[name="password"]', 'MrR0b0t15Th3B3st')
+    await page.type('input[name="username"]', 'moderator')
+    await page.type('input[name="password"]', 'Y0uShallN0tP455!')
 
     login_button_selector = 'button[type="submit"]'
     await page.click(login_button_selector)

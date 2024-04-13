@@ -61,8 +61,8 @@ Vagrant.configure("2") do |config|
       vb.gui = true
   #
   #   # Customize the amount of memory on the VM:
-       vb.memory = "2048"
-       vb.cpus="2"
+       vb.memory = "4096"
+       vb.cpus="4"
        vb.name="CTF"
      end
      config.vm.provision "file", source: "./www/", destination: "/tmp/"
@@ -88,10 +88,16 @@ Vagrant.configure("2") do |config|
     sudo apt install sqlite3 -y
     sudo apt install php8.2-sqlite3 -y
     sudo sqlite3 /var/www/html/ctf.db "CREATE TABLE contact(name text, subject text, message text);"
-    sudo sqlite3 /var/www/html/ctf.db "CREATE TABLE user(username text, password text);"
-    PLAINTEXT_PASSWORD="MrR0b0t15Th3B3st"
+    sudo sqlite3 /var/www/html/ctf.db "CREATE TABLE user(username text, password text, role integer);"
+    PLAINTEXT_PASSWORD="mrroboto"
     HASHED_PASSWORD=$(php -r "echo password_hash('$PLAINTEXT_PASSWORD', PASSWORD_BCRYPT);")
-    sudo sqlite3 /var/www/html/ctf.db "INSERT INTO user VALUES ('admin','$HASHED_PASSWORD');"
+    sudo sqlite3 /var/www/html/ctf.db "INSERT INTO user VALUES ('admin','$HASHED_PASSWORD',2);"
+    PLAINTEXT_PASSWORD="Y0uShallN0tP455!"
+    HASHED_PASSWORD=$(php -r "echo password_hash('$PLAINTEXT_PASSWORD', PASSWORD_BCRYPT);")
+    sudo sqlite3 /var/www/html/ctf.db "INSERT INTO user VALUES ('moderator','$HASHED_PASSWORD',1);"
+    sudo sqlite3 /var/www/html/ctf.db "CREATE TABLE flag(flag text);"
+    FLAG="CTF{223797ae419b4189128f2895c44252c8}"
+    sudo sqlite3 /var/www/html/ctf.db "INSERT INTO flag VALUES ('$FLAG');"
     sudo service apache2 start
     sudo ufw allow 80 
     yes | sudo ufw enable
@@ -110,10 +116,10 @@ Vagrant.configure("2") do |config|
     echo 'www-data ALL=(ALL) NOPASSWD: /usr/bin/awk' > /tmp/www-data-awk
     visudo -c -f /tmp/www-data-awk && mv /tmp/www-data-awk /etc/sudoers.d/
     sudo mkdir -p /home/www-data/
-    sudo echo "CTF{d60b3309622970d9151d521e75f1d6a5}" >/home/www-data/flag2.txt
-    sudo chown -R www-data:www-data /home/www-data/flag2.txt
-    sudo echo "CTF{35a5b0fb193f83e480ab8153f0471cdd}" >/home/flag3.txt
-    sudo chown -R root:root /home/flag3.txt
+    sudo echo "CTF{d60b3309622970d9151d521e75f1d6a5}" >/home/www-data/flag4.txt
+    sudo chown -R www-data:www-data /home/www-data/flag4.txt
+    sudo echo "CTF{35a5b0fb193f83e480ab8153f0471cdd}" >/home/flag5.txt
+    sudo chown -R root:root /home/flag5.txt
     echo 'vagrant:Dadasada123' | sudo chpasswd
 
 

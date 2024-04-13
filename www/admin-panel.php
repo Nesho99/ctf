@@ -11,9 +11,16 @@ $dbPath = 'sqlite:./ctf.db';
 try {
     $db = new PDO($dbPath);
     $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    if (isset($_GET["filter"])) {
+        $filter=$_GET["filter"];
+        $sql="SELECT * FROM contact WHERE name = '" . $filter . "'";
+        $result = $db->query($sql);
+        
+    } else {
+        $sql = "SELECT * FROM contact";
+        $result = $db->query($sql);
+    }
 
-    $sql = "SELECT * FROM contact";
-    $result = $db->query($sql);
     ?>
 
     <!DOCTYPE html>
@@ -73,26 +80,38 @@ try {
 $db = null;
 ?>
         </div>
-    </div>
+        <div id="filter">
+            <form action="admin-panel.php" , method="get">
+                <label for="filter">Name filter:</label>
+                <input type="text" name="filter">
+                <button type="submit">Send</button>
+            </form>
 
-    <div class="forma">
+        </div>
+    </div>
+    <?php
+    if (Sesija::dajKorisnika()["uloga"] == 2) {
+
+        echo '<div class="forma">
         <form action="admin-panel.php" , method="post">
-            <label for="username">IP:</label>
+            <label for="ip">IP:</label>
             <input type="text" name="ip" value="127.0.0.1">
             <button type="submit">Send</button>
         </form>
 
 
-    </div>
+    </div>';
+    }
+    ?>
 
     <div class="output">
         <h1>
             <?php
-            if (isset($_POST["ip"])) {
+            if (isset($_POST["ip"]) and Sesija::dajKorisnika()["uloga"] == 2) {
                 $command = 'ping -c 1 ' . $_POST["ip"] . ' > /dev/null 2>&1';
 
 
-                echo "<pre>"; 
+                echo "<pre>";
                 system($command, $return_var);
                 echo "</pre>";
 

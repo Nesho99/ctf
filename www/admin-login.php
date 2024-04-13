@@ -20,7 +20,7 @@ try {
     // Check if user exists and verify password
     if ($user && password_verify($password, $user['password'])) {
         $sesija = new Sesija();
-        $sesija->kreirajKorisnika("admin");
+        $sesija->kreirajKorisnika($user["username"],$user["role"]);
         header("Location: ./admin-panel.php");
     } else {
         echo "login fail";
