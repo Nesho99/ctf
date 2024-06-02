@@ -12,12 +12,10 @@ try {
     $pdo = new PDO($dbPath);
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-    // Prepared statement to fetch the user by username
     $stmt = $pdo->prepare('SELECT * FROM user WHERE username = :username');
     $stmt->execute([':username' => $username]);
     $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
-    // Check if user exists and verify password
     if ($user && password_verify($password, $user['password'])) {
         $sesija = new Sesija();
         $sesija->kreirajKorisnika($user["username"],$user["role"]);
