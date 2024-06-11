@@ -1,6 +1,6 @@
 <?php
 require_once ("Sesija.class.php");
-
+header("Access-Control-Allow-Origin: *");
 if (Sesija::dajKorisnika() == null) {
     echo "Session create fail";
     header("Location: ./admin-login.html");
